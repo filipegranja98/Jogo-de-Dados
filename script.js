@@ -65,14 +65,14 @@ const calcular = (valorjg1, valorjg2) => {
       alert("Fim do jogo!");
       if(pontosjg1 > pontosjg2){
         setTimeout(function() {
-          alert("O jogador 1: Ganhou o jogo");}, 1000);
+          alert("O jogador 1: Ganhou o jogo");}, 4000);
        
       }else if(pontosjg1 < pontosjg2){
         setTimeout(function() {
-          alert("O jogador 2: Ganhou o jogo");}, 1000);
+          alert("O jogador 2: Ganhou o jogo");}, 4000);
       }else{
         setTimeout(function() {
-          alert("[PARTIDA EMPATADA!!!]");}, 1000);
+          alert("[PARTIDA EMPATADA!!!]");}, 4000);
       }
     }
   };
