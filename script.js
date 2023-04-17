@@ -37,8 +37,8 @@ const calcular = (valorjg1, valorjg2) => {
       pontosjogador1.innerHTML = `Jogador 1: ${pontosjg1}`;
       setTimeout(function() {
         resultado1.innerHTML = "0"; }, 3000);
-        setTimeout(function() {
-            resultado2.innerHTML = "0"; }, 3000);
+      setTimeout(function() {
+          resultado2.innerHTML = "0"; }, 3000);
     } else if (valorjg2 > valorjg1) {
      setTimeout(function() {
         alert("O jogador 2 ganhou a rodada!!!");}, 1000);
@@ -98,6 +98,7 @@ const calcular = (valorjg1, valorjg2) => {
     pontosjg1 = 0;
     pontosjg2 = 0;
     rodadas = 0;
+    nrodadas.innerHTML = " " ;
     vezjogador = 0;
     pontosjogador1.innerHTML = `Jogador 1: ${pontosjg1}`;
     pontosjogador2.innerHTML = `Jogador 2: ${pontosjg2}`;

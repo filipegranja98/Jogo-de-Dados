@@ -80,6 +80,7 @@
   #placar h2 {
     margin-top: 0;
     color: var(--cor-primaria);
+    text-align: center;
   }
   
   #pontos {
