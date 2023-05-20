@@ -10,6 +10,8 @@ let pontosjg1 = 0;
 let pontosjg2 = 0;
 let rodadas = 0;
 let vezjogador = 0;
+nrodadas.innerHTML = `Rodada de número: ${localStorage.getItem("rodadas")}`;
+
 
 const calcularjg1 = () =>{
     let valordadojg1  = Math.floor(Math.random() * 6) +1;
@@ -34,7 +36,8 @@ const calcular = (valorjg1, valorjg2) => {
         setTimeout(function() {
             alert("O jogador 1 ganhou a rodada!!!"); }, 1000);
       pontosjg1 += 1;
-      pontosjogador1.innerHTML = `Jogador 1: ${pontosjg1}`;
+      localStorage.setItem("pontosjg1", pontosjg1);
+      pontosjogador1.innerHTML = `Jogador 1: ${localStorage.getItem("pontosjg1")}`;
       setTimeout(function() {
         resultado1.innerHTML = "0"; }, 3000);
       setTimeout(function() {
@@ -47,7 +50,9 @@ const calcular = (valorjg1, valorjg2) => {
             setTimeout(function() {
                 resultado2.innerHTML = "0"; }, 3000);
       pontosjg2 += 1;
-      pontosjogador2.innerHTML = `Jogador 2: ${pontosjg2}`;
+      localStorage.setItem("pontosjg2", pontosjg2);
+      
+      pontosjogador2.innerHTML = `Jogador 2: ${localStorage.getItem("pontosjg2")}`;
     } else {
         setTimeout(function() {
             alert(`[EMPATE!!!] jogador 1 obteve: ${valorjg1} e jogador 2 obteve: ${valorjg2}`);}, 1000);
@@ -57,8 +62,15 @@ const calcular = (valorjg1, valorjg2) => {
                     resultado2.innerHTML = "0"; }, 3000);
       
     }
-    rodadas += 1;
-    nrodadas.innerHTML = `Rodada de número: ${rodadas}`;
+    if (localStorage.getItem("rodadas") === null) {
+        localStorage.setItem("rodadas", 0);
+    }
+      
+    let numrodadas = localStorage.getItem("rodadas");
+    numrodadas = parseInt(numrodadas); // Converter para número
+    numrodadas += 1; // Incrementar o valor
+    localStorage.setItem("rodadas", numrodadas);
+    nrodadas.innerHTML = `Rodada de número: ${numrodadas}`;
     if (rodadas >= 10) {
       botao1.disabled = true;
       botao2.disabled = true;
@@ -107,4 +119,3 @@ const calcular = (valorjg1, valorjg2) => {
     botao1.disabled = false;
     botao2.disabled = true;
   };
-  
